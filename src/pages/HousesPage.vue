@@ -1,14 +1,42 @@
 <template>
   <div class="housesPage">
     <h1>This is the houses page</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <HouseCard/>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 
 <script>
+import { onMounted, computed } from "vue";
+import { logger } from "../utils/Logger.js";
+import Pop from "../utils/Pop.js";
+import { housesService } from "../services/HousesService.js"
+
 export default {
   setup(){
-    return {}
+
+async function get_all_houses(){
+  try {
+    await housesService.get_all_houses()
+  } catch (error) {
+    Pop.error(error)
+    logger.error
+  }
+}
+
+onMounted(() => {
+  get_all_houses()
+})
+
+    return {
+      houses: computed(() => AppState.houses)
+    }
   }
 }
 </script>
