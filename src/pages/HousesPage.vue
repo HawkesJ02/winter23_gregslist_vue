@@ -7,7 +7,19 @@
           <HouseCard :house="h"/>
         </div>
       </div>
+      <div class="row sticky-bottom">
+        <div class="col-12">
+          <button class="fs-5 btn btn-dark" data-bs-toggle="modal" data-bs-target="#test-modal">
+            🏘
+          </button>
+        </div>
+      </div>
     </div>
+   
+<Modal id="test-modal" modal-title="ADD A NEW HOUSE :)">
+<HouseForm/>
+</Modal>
+
   </div>
 </template>
 
