@@ -8,7 +8,10 @@
   <p>Levels: {{ house.levels }}</p>
   <p>Year: {{ house.year }}</p>
 </div>
-
+<div class="card-footer text-end" v-if="showSeller">
+<span class="on-hover me-2">{{ house.seller.name }}</span>
+<img :src="house.seller.picture" :alt="house.seller.name">
+</div>
   </div>
 </template>
 
@@ -16,7 +19,8 @@
 <script>
 export default {
   props: {
-    house: { type: Object, required: true}
+    house: { type: Object, required: true},
+    showSeller: { type: Boolean, default: true }
   },
   setup(){
     return {}

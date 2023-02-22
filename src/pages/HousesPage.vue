@@ -48,7 +48,8 @@ onMounted(() => {
 })
 
     return {
-      houses: computed(() => AppState.houses)
+      houses: computed(() => AppState.houses),
+      account: computed(() => AppState.account)
     }
   }
 }
