@@ -1,5 +1,5 @@
 <template>
-  <div class="HouseCard card">
+  <div class="HouseCard card my-3">
     <img :src="house.imgUrl" :alt="house.year" height="200" width="200">
 <div>
   <p>Description: {{ house.description }}</p>
@@ -10,7 +10,7 @@
 </div>
 <div class="card-footer text-end" v-if="showSeller">
 <span class="on-hover me-2">{{ house.seller.name }}</span>
-<img :src="house.seller.picture" :alt="house.seller.name">
+<img :src="house.seller.picture" :alt="house.seller.name" height="40" width="40" class="rounded-circle">
 </div>
   </div>
 </template>
